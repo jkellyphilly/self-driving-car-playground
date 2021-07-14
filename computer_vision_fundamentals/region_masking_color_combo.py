@@ -52,7 +52,7 @@ region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \
                     (YY < (XX*fit_bottom[0] + fit_bottom[1]))
 
 # Mask color and region selection
-# TODO: what is this syntax here?
+# both color_thresholds and region_thresholds are numpy.ndarray type
 # Set everything to black (0,0,0) that is either in the
 # color_thresholds, i.e. below our thresholds, or is
 # not in the region_thresholds
@@ -70,7 +70,7 @@ plt.imshow(line_image)
 
 
 ## TLDR
-# We set color threshold per RGB values and set everything under those values 
+# We set color threshold per RGB values and set everything under those values
 # to black, everything else stays white (what if there's white sidewalk??)
 # Then, we use our triangular coordinates to focus on where the road is in the
 # camera's frame
